@@ -28,6 +28,7 @@ Każda z funkcji została przetestowana. Przy testach funkcji fillArray uwzględ
 -gdy tablica nie jest kwadratowa
 -jest kwadratowa
 -ma rozmiar 1x1
+-jeden z wymiarów to 1
 -jej rozmiar to 0x0.
 Wszystkie stworzone asercje dały poprawny wynik.
 
