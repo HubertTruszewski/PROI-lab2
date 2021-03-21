@@ -43,7 +43,7 @@ void nextUpStartPoint(int& start_up_row, int& start_up_column)
 
 void fillArrayDown(std::array<std::array<int, maxColumns>, maxRows>& array, size_t rows, size_t columns, int start_row, int start_column, int& value)
 {
-	for (size_t i = 0; start_column - i >= 0 && start_row + i < rows; i++)
+	for (int i = 0; start_column - i >= 0 && start_row + i < rows; i++)
 	{
 		array[start_row + i][start_column - i] = value++;
 	}
@@ -51,7 +51,7 @@ void fillArrayDown(std::array<std::array<int, maxColumns>, maxRows>& array, size
 
 void fillArrayUp(std::array<std::array<int, maxColumns>, maxRows>& array, size_t rows, size_t columns, int start_row, int start_column, int& value)
 {
-	for (size_t i = 0; start_row - i >= 0 && start_column + i < columns; i++)
+	for (int i = 0; start_row - i >= 0 && start_column + i < columns; i++)
 	{
 		array[start_row - i][start_column + i] = value++;
 	}
@@ -62,10 +62,10 @@ void fillArray(std::array<std::array<int, maxColumns>, maxRows>& array, size_t r
 {
 	int diagonals = diagonalsNumber(columns, rows);
 	int value = 1;
-	int start_down_row = rows - 1;
-	int start_down_column = columns - 1;
-	int start_up_row = rows - 1;
-	int start_up_column = columns - 2;
+	int start_down_row = (int)rows - 1;
+	int start_down_column = (int)columns - 1;
+	int start_up_row = (int)rows - 1;
+	int start_up_column = (int)columns - 2;
 	for (int i = 0; i < diagonals; i++)
 	{
 		if (i % 2 == 0) // dla parzystych
