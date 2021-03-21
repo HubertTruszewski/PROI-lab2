@@ -2,7 +2,7 @@
 #include "FillArrayLib.h"
 
 
-int diagonals_number(int columns, int rows)
+int diagonalsNumber(int columns, int rows)
 {
 	return columns + rows - 1;
 }
@@ -60,7 +60,7 @@ void fillArrayUp(std::array<std::array<int, maxColumns>, maxRows>& array, size_t
 
 void fillArray(std::array<std::array<int, maxColumns>, maxRows>& array, size_t rows, size_t columns)
 {
-	int diagonals = diagonals_number(columns, rows);
+	int diagonals = diagonalsNumber(columns, rows);
 	int value = 1;
 	int start_down_row = rows - 1;
 	int start_down_column = columns - 1;

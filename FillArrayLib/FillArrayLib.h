@@ -4,7 +4,7 @@ const size_t maxRows = 20;
 const size_t maxColumns = 20;
 
 
-int diagonals_number(int columns, int rows);
+int diagonalsNumber(int columns, int rows);
 
 void nextDownStartPoint(int& start_down_row, int& start_down_column);
 
