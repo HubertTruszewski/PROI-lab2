@@ -42,8 +42,8 @@ namespace FillArrayUnitTest
 			int start_down_column = 2;
 			int expected_column = 0;
 			int expected_row = 0;
-			nextDownStartPoint(start_down_row, start_down_column);
-			nextDownStartPoint(start_down_row, start_down_column);
+			nextDownStartPoint(start_down_row, start_down_column, 2, 2);
+			nextDownStartPoint(start_down_row, start_down_column, 2, 2);
 			Assert::AreEqual(start_down_row, expected_row);
 			Assert::AreEqual(start_down_column, expected_column);
 		}
@@ -53,7 +53,7 @@ namespace FillArrayUnitTest
 			int start_up_column = 2;
 			int expected_column = 0;
 			int expected_row = 2;
-			nextUpStartPoint(start_up_row, start_up_column);
+			nextUpStartPoint(start_up_row, start_up_column, 3, 2);
 			Assert::AreEqual(start_up_row, expected_row);
 			Assert::AreEqual(start_up_column, expected_column);
 		}
@@ -108,6 +108,22 @@ namespace FillArrayUnitTest
 			std::array<std::array<int, maxColumns>, maxRows> t = { { {16, 15, 11, 10}, {14, 12, 9, 4}, {13, 8, 5, 3}, {7, 6, 2, 1} } };
 			std::array<std::array<int, maxColumns>, maxRows> t1 = {};
 			fillArray(t1, 4, 4);
+			Assert::AreEqual(t, t1);
+		}
+
+		TEST_METHOD(TestFillArrayOneColumn)
+		{
+			std::array<std::array<int, maxColumns>, maxRows> t = { { {5}, {4}, {3}, {2}, {1} } };
+			std::array<std::array<int, maxColumns>, maxRows> t1 = {};
+			fillArray(t1, 5, 1);
+			Assert::AreEqual(t, t1);
+		}
+
+		TEST_METHOD(TestFillArrayOneLine)
+		{
+			std::array<std::array<int, maxColumns>, maxRows> t = { { {5, 4, 3, 2, 1} } };
+			std::array<std::array<int, maxColumns>, maxRows> t1 = {};
+			fillArray(t1, 1, 5);
 			Assert::AreEqual(t, t1);
 		}
 	};
