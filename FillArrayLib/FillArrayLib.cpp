@@ -13,10 +13,6 @@ void nextDownStartPoint(int& start_down_row, int& start_down_column, size_t rows
 	{
 		start_down_row -= 2;
 	}
-	else if (rows == 1)
-	{
-		start_down_column -= 2;
-	}
 	else if (start_down_row > 1)
 	{
 		start_down_row -= 2;
@@ -37,10 +33,6 @@ void nextUpStartPoint(int& start_up_row, int& start_up_column, size_t rows, size
 	if (columns == 1)
 	{
 		start_up_row -= 2;
-	}
-	else if (rows == 1)
-	{
-		start_up_column -= 2;
 	}
 	else if (start_up_column > 1)
 	{
