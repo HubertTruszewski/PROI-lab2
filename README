@@ -1,0 +1,34 @@
+Autor: Hubert Truszewski
+
+Opis zadania:
+
+Napisać funkcję
+
+void fillArray(std::array<std::array<int, maxColumns>, maxRows> array, size_t rows, size_t columns);
+
+wypełniającą tablicę prostokątną o rozmiarze N wierszy i M kolumn. Tablicę należy wypełnić kolejnymi liczbami całkowitymi (zaczynając od 1 a kończąc na liczbie o wartości N*M).
+
+Zakładając, że w lewy górny róg tablicy ma współrzędne (0, 0) a prawy dolny ma współrzędne (N-1, M-1) wypełnić tablicę:
+zaczynając od prawego dolnego rogu,
+diagonalnie (kolejnymi przekątnymi od punktu początkowego) raz w dół raz w górę zaczynając od w dół (dla przekątnej o długości 1 – punkt początkowy).
+Napisać testy jednostkowe dla napisanej funkcji.
+
+Problem podzieliłem na kilka funkcji:
+-fillArrayDown, która wypełnia tablicę "w dół" od ponanego punktu początkowego
+-fillArrayUp - analogiczna do fillArrayDown, ale wypełnia "w górę"
+-diagonalsNumber - zwraca liczbę przekątnych w tablicy
+-nextDownStartPoint - określa punkt początkowy dla następnego wypełnienia w dół
+-nextUpStartPoint - określa punkt początkowy dla następnego wypełnienia w górę
+-fillArray - wypełnia tablicę według wymagań z polecenia.
+
+Całość została napisana i przetestowana w Visual Studio 2019.
+
+Sposób testowania:
+Każda z funkcji została przetestowana. Przy testach funkcji fillArray uwzględniłem kilka przypadków:
+-gdy tablica nie jest kwadratowa
+-jest kwadratowa
+-ma rozmiar 1x1
+-jej rozmiar to 0x0.
+Wszystkie stworzone asercje dały poprawny wynik.
+
+
