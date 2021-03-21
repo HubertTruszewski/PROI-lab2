@@ -7,6 +7,39 @@ int diagonals_number(int columns, int rows)
 	return columns + rows - 1;
 }
 
+void nextDownStartPoint(int& start_down_row, int& start_down_column)
+{
+	if (start_down_row > 1)
+	{
+		start_down_row -= 2;
+	}
+	else if (start_down_row == 1)
+	{
+		start_down_row--;
+		start_down_column--;
+	}
+	else
+	{
+		start_down_column -= 2;
+	}
+}
+
+void nextUpStartPoint(int& start_up_row, int& start_up_column)
+{
+	if (start_up_column > 1)
+	{
+		start_up_column -= 2;
+	}
+	else if (start_up_column == 1)
+	{
+		start_up_column--;
+		start_up_row--;
+	}
+	else
+	{
+		start_up_row -= 2;
+	}
+}
 
 void fillArrayDown(std::array<std::array<int, maxColumns>, maxRows>& array, size_t rows, size_t columns, int start_row, int start_column, int& value)
 {
@@ -39,37 +72,13 @@ void fillArray(std::array<std::array<int, maxColumns>, maxRows>& array, size_t r
 		{
 			fillArrayDown(array, rows, columns, start_down_row, start_down_column, value);
 
-			if (start_down_row > 1)
-			{
-				start_down_row -= 2;
-			}
-			else if (start_down_row == 1)
-			{
-				start_down_row--;
-				start_down_column--;
-			}
-			else
-			{
-				start_down_column -= 2;
-			}
+			nextDownStartPoint(start_down_row, start_down_column);
 		}
 		else
 		{
 			fillArrayUp(array, rows, columns, start_up_row, start_up_column, value);
 
-			if (start_up_column > 1)
-			{
-				start_up_column -= 2;
-			}
-			else if (start_up_column == 1)
-			{
-				start_up_column--;
-				start_up_row--;
-			}
-			else
-			{
-				start_up_row -= 2;
-			}
+			nextUpStartPoint(start_up_row, start_up_column);
 		}
 	}
 }
