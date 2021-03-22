@@ -9,11 +9,7 @@ int diagonalsNumber(int columns, int rows)
 
 void nextDownStartPoint(int& start_down_row, int& start_down_column, size_t rows, size_t columns)
 {
-	if (columns == 1)
-	{
-		start_down_row -= 2;
-	}
-	else if (start_down_row > 1)
+	if (columns == 1 || start_down_row > 1)
 	{
 		start_down_row -= 2;
 	}
@@ -30,11 +26,7 @@ void nextDownStartPoint(int& start_down_row, int& start_down_column, size_t rows
 
 void nextUpStartPoint(int& start_up_row, int& start_up_column, size_t rows, size_t columns)
 {
-	if (columns == 1)
-	{
-		start_up_row -= 2;
-	}
-	else if (start_up_column > 1)
+	if (start_up_column > 1)
 	{
 		start_up_column -= 2;
 	}
